@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class Cfg4jDemo {
 
     public static void classpath() {
+        //可以使用后一个配置文件覆盖前一个配置文件的值
         ConfigFilesProvider configFilesProvider = () -> Arrays.asList(Paths.get("application.yaml"), Paths.get("otherConfig.properties"));
         ConfigurationSource source = new ClasspathConfigurationSource(configFilesProvider);
         Environment environment = new ImmutableEnvironment("tools/cfg4j");
