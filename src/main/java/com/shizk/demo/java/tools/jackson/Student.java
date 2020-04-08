@@ -12,10 +12,11 @@ public class Student {
 
     private String name;
     private int age;
+    private String company;
 
-    public String getSex() {
-        return sex;
-    }
+//    public String getSex() {
+//        return sex;
+//    }
 
     public void setSex(String sex) {
         this.sex = sex;
@@ -26,9 +27,9 @@ public class Student {
     public Student() {
     }
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 
     public void setName(String name) {
         this.name = name;
@@ -40,6 +41,11 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    static class Builder {
+        int a;
+        String x = "x";
     }
 
 }
