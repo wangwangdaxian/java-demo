@@ -6,7 +6,8 @@ import com.googlecode.aviator.Expression;
 import java.util.HashMap;
 
 public class AviatorDemo {
-    public static void main(String[] args) {
+
+    public void test1() {
         final HashMap<String, Object> env = new HashMap<>();
         env.put("x", 5);
         env.put("b", "B");
@@ -21,5 +22,12 @@ public class AviatorDemo {
         final Expression expression = AviatorEvaluator.compile(condition, true);
         System.out.println(expression.execute(env));
         AviatorEvaluator.invalidateCache(condition);
+    }
+
+    public static void main(String[] args) {
+        final HashMap<String, Object> env = new HashMap<>();
+        env.put("city", "shanghai");
+        final Object r1 = AviatorEvaluator.execute("include(seq.set('shanghai','beijing'),city)", env);
+        System.out.println(r1);
     }
 }
