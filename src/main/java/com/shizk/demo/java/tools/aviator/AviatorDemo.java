@@ -24,10 +24,20 @@ public class AviatorDemo {
         AviatorEvaluator.invalidateCache(condition);
     }
 
-    public static void main(String[] args) {
+    public void test2() {
         final HashMap<String, Object> env = new HashMap<>();
         env.put("city", "shanghai");
         final Object r1 = AviatorEvaluator.execute("include(seq.set('shanghai','beijing'),city)", env);
         System.out.println(r1);
+    }
+
+    public static void main(String[] args) {
+        final HashMap<String, Object> env = new HashMap<>();
+        final HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "jack");
+        map.put("age", 1);
+        env.put("person", map);
+        Object r = AviatorEvaluator.execute("person.age>0", env);
+        System.out.println(r);
     }
 }
