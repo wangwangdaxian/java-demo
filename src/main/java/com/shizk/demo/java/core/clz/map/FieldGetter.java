@@ -1,4 +1,4 @@
-package com.shizk.demo.java.core.clz;
+package com.shizk.demo.java.core.clz.map;
 
 import com.shizk.demo.java.tools.jackson.Person;
 

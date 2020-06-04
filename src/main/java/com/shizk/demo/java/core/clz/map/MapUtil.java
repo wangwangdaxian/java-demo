@@ -1,4 +1,4 @@
-package com.shizk.demo.java.core.clz;
+package com.shizk.demo.java.core.clz.map;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
