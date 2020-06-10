@@ -1,15 +1,16 @@
 package com.shizk.demo.java.tools.jackson;
 
-import lombok.*;
+//@Data
+//@Builder
+//@AllArgsConstructor(staticName = "of")
+//@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
+public interface Student {
 
-@Value
-@Builder
-@AllArgsConstructor(staticName = "of")
-@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
-public class Student {
-    String name;
-    int    age;
-    String company;
+     String getName();
+
+     int getAge();
+
+     String getCompany();
 }
 
 

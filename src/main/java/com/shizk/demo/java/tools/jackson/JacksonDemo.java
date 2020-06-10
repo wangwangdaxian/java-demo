@@ -20,7 +20,7 @@ public class JacksonDemo {
     }
 
     public static void test2() throws JsonProcessingException {
-        Student student = Student.builder().age(10).name("a").company("b").build();
+        Student student = HypersStudent.builder().id("a").age(1).name("a").company("a").build();
         //        Student student = Student.builder().setAge(10).setName("a").build();
         ObjectMapper objectMapper = new ObjectMapper();
         String s = objectMapper.writeValueAsString(student);
