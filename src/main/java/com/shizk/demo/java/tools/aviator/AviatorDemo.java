@@ -32,12 +32,17 @@ public class AviatorDemo {
     }
 
     public static void main(String[] args) {
-        final HashMap<String, Object> env = new HashMap<>();
-        final HashMap<String, Object> map = new HashMap<>();
+        HashMap<String, Object> map = new HashMap<>();
         map.put("name", "jack");
         map.put("age", 1);
-        env.put("person", map);
-        Object r = AviatorEvaluator.execute("person.age>0", env);
+        HashMap<String, Object> env = new HashMap<>();
+        env.put("personMap", map);
+        Object r = AviatorEvaluator.execute("seq.contains_key(personMap,'name') && seq.contains_key(personMap,'age')",
+                                            env);
+        Object o2 = AviatorEvaluator.execute(
+                "seq.every(seq.list('name'),lambda (x) -> seq.contains_key(personMap,x) end)",
+                env);
         System.out.println(r);
+        System.out.println(o2);
     }
 }

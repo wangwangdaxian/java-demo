@@ -8,10 +8,6 @@ import com.amazonaws.services.s3.S3ClientOptions;
 
 public class S3Demo {
     public static void main(String[] args) {
-        String filePath = "/tmp/blockedlist.csv";
-        String bucketName = "";
-        String key = "haweb-test/confignew/blacklistfile.csv";
-
         ClientConfiguration opts = new ClientConfiguration();
         opts.setSignerOverride("AWSS3V4SignerType");
         S3ClientOptions options = new S3ClientOptions();
@@ -24,10 +20,10 @@ public class S3Demo {
         //        client.listBuckets().forEach(System.out::println);
 
         client.getObject("haweb-test", "confignew/blacklistfile.csv");
-        //        GetObjectRequest request = new GetObjectRequest(bucketName, key);
+        //                GetObjectRequest request = new GetObjectRequest(bucketName, key);
         //        Date now = Date.from(Instant.now());
-        //        request.setModifiedSinceConstraint(now);
-        //        request.setUnmodifiedSinceConstraint(now);
+        //                request.setModifiedSinceConstraint(now);
+        //                request.setUnmodifiedSinceConstraint(now);
         //将对象存在文件中，并返回对象的元数据
         //        ObjectMetadata meta = client.getObject(request, new File(filePath));
         client.shutdown();
