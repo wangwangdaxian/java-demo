@@ -167,6 +167,11 @@
             <version>1.10.69</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.redfin</groupId>
+            <artifactId>validity</artifactId>
+            <version>5.1.0</version>
+        </dependency>
 
     </dependencies>
 
