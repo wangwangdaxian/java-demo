@@ -37,12 +37,9 @@ public class AviatorDemo {
         map.put("age", 1);
         HashMap<String, Object> env = new HashMap<>();
         env.put("personMap", map);
-        Object r = AviatorEvaluator.execute("seq.contains_key(personMap,'name') && seq.contains_key(personMap,'age')",
+        env.put("abc", null);
+        Object r = AviatorEvaluator.execute("abc != nil",
                                             env);
-        Object o2 = AviatorEvaluator.execute(
-                "seq.every(seq.list('name'),lambda (x) -> seq.contains_key(personMap,x) end)",
-                env);
         System.out.println(r);
-        System.out.println(o2);
     }
 }
